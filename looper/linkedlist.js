@@ -1,5 +1,5 @@
 class Node {
-  constructor (value) {
+  constructor(value) {
     this.value = value
     this.previous = null
     this.next = null
@@ -7,12 +7,12 @@ class Node {
 }
 
 class LinkedList {
-  constructor () {
+  constructor() {
     this.head = null
     this.tail = null
   }
 
-  addToHead (value) {
+  addToHead(value) {
     const newNode = new Node(value)
     const formerHead = this.head
     this.head = newNode
@@ -24,7 +24,7 @@ class LinkedList {
     }
   }
 
-  addToTail (value) {
+  addToTail(value) {
     const newNode = new Node(value)
     const formerTail = this.tail
     this.tail = newNode
@@ -36,7 +36,7 @@ class LinkedList {
     }
   }
 
-  removeHead () {
+  removeHead() {
     const removedHead = this.head
     if (!removedHead) return null
     if (removedHead.next) {
@@ -49,7 +49,7 @@ class LinkedList {
     return removedHead.value
   }
 
-  removeTail () {
+  removeTail() {
     const removedTail = this.tail
     if (!removedTail) return null
     if (removedTail.previous) {
@@ -62,7 +62,7 @@ class LinkedList {
     return removedTail.value
   }
 
-  search (comparator) {
+  search(comparator) {
     if (typeof comparator === 'string') {
       const comparatorString = comparator
       comparator = (elementValue) => comparatorString === elementValue
@@ -75,10 +75,10 @@ class LinkedList {
     return null
   }
 
-  getNthNode(n){
+  getNthNode(n) {
     let counter = 1;
     let curr = this.head;
-    while(counter < n){
+    while (counter < n) {
       curr = curr.next
       counter++
     }
